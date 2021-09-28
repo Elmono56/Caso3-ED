@@ -1,9 +1,14 @@
+#ifndef _PEDIDOS_
+#define _PEDIDOS_ 0
+
 #include <iostream>
+#include "bodega.h"
 
 using namespace std;
 
 struct pedidos {
-    int columnas = 0;
-    int paletas = 0;
-    int unidades = 0;
+    int cantidad[];
+    bodega pedidos[];
 }
+
+#endif
