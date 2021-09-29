@@ -1,7 +1,7 @@
 #ifndef _STACK_
 #define _STACK_ 0
 
-#include "lista.h"
+#include "listadoble.h"
 
 struct stack {
     struct listadoble stackList;

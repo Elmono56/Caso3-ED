@@ -7,8 +7,8 @@
 using namespace std;
 
 struct pedidos {
-    int cantidad[];
-    bodega pedidos[];
-}
+    int cantidad[10];
+    //bodega pedidos[];
+};
 
 #endif
