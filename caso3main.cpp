@@ -37,8 +37,8 @@ int main() {
     struct nodo a6;
     a6.data = &arroz6;
 
-    struct listadoble columnaa1;
-    struct stack columnaarroz = {columnaa1};
+    //struct listadoble columnaa1;
+    struct stack columnaarroz;
 
     columnaarroz.push(&a1);
 
@@ -52,8 +52,10 @@ int main() {
 
     columnaarroz.push(&a6);
 
-    struct bodega bodegaarroz={columnaarroz};
+    cout<< columnaarroz.isEmpty() <<endl;
 
+    struct bodega bodegaarroz; //={columnaarroz};
+    bodegaarroz.columnas = columnaarroz;
         
     bodegaarroz.retirarProducto(75);
 
