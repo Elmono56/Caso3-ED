@@ -52,8 +52,6 @@ int main() {
 
     columnaarroz.push(&a6);
 
-    cout<< columnaarroz.isEmpty() <<endl;
-
     struct bodega bodegaarroz; //={columnaarroz};
     bodegaarroz.columnas = columnaarroz;
         

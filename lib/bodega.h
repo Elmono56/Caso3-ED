@@ -14,10 +14,8 @@ struct bodega {
 
 
     void retirarProducto(int restar){
-        int cant = columnas.isEmpty();
-
-        cout<<cant<<endl; 
-        if (columnas.isEmpty()!=0){
+        
+        if (columnas.isEmpty()==0){
              struct paleta* paleta1 = (struct paleta*) columnas.pop();
 
             while (restar!=0 & paleta1->cantproducto!=0){
@@ -31,6 +29,15 @@ struct bodega {
         }
         else{
             cout<<"Imposible"<<endl;
+        }
+    }
+
+    void verCantProductos(){
+        if (columnas.isEmpty()==0){
+
+        }
+        else{
+            
         }
     }
 };
