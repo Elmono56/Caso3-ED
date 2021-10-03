@@ -5,7 +5,7 @@
 
 struct paleta{
 
-    int cantproducto;
+    int cantproducto=0;
 
 };
 

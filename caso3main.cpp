@@ -38,7 +38,10 @@ int main() {
     a6.data = &arroz6;
 
     //struct listadoble columnaa1;
+
     struct stack columnaarroz;
+
+    //columnaarroz.stackList=columnaa1;
 
     columnaarroz.push(&a1);
 
@@ -52,12 +55,27 @@ int main() {
 
     columnaarroz.push(&a6);
 
+    //nodo* paleta1 = (nodo*) columnaarroz.pop();
+
+    //struct paleta* hola = (paleta*) paleta1->data;
+
+    //cout<<hola->cantproducto<<" hola cant"<<endl;
+
     struct bodega bodegaarroz; //={columnaarroz};
     bodegaarroz.columnas = columnaarroz;
-        
-    bodegaarroz.retirarProducto(75);
 
+    //bodegaarroz.columnas.push(paleta1);
 
+    //paleta1 = (nodo*) bodegaarroz.columnas.pop();
+
+    //hola = (paleta*) paleta1->data;
+
+    //cout<<hola->cantproducto<<" desde bodega hola cant"<<endl;
+    bodegaarroz.retirarProducto(80);
+
+    int cantidad =bodegaarroz.verCantProductos();
+
+    cout<<cantidad<<endl;
 
 
 

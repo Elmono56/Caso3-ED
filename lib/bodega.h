@@ -16,15 +16,22 @@ struct bodega {
     void retirarProducto(int restar){
         
         if (columnas.isEmpty()==0){
-             struct paleta* paleta1 = (struct paleta*) columnas.pop();
 
+            nodo* nodop = (nodo*) columnas.pop();
+            paleta* paleta1 = (paleta*) nodop->data;
+            
             while (restar!=0 & paleta1->cantproducto!=0){
                 paleta1->cantproducto=paleta1->cantproducto-1;
                 restar--;
             }
-            cout<<"Resto 25"<<endl;
-            if (restar<0){
+            if (restar>0){
                 retirarProducto(restar);
+            }
+            if (paleta1->cantproducto>0){
+                columnas.push(paleta1);
+            }
+            if (restar==0){
+                cout<<"Los productos se consiguieron en x tiempo"<<endl;
             }
         }
         else{
@@ -32,12 +39,20 @@ struct bodega {
         }
     }
 
-    void verCantProductos(){
+    int verCantProductos(){
         if (columnas.isEmpty()==0){
-
+            nodo* puntero = columnas.stackList.start;
+            int cantidad=0;
+            while (puntero!=nullptr){
+                    paleta* paleta1 = (paleta*) puntero->data;
+                    cantidad = cantidad + paleta1->cantproducto;
+                    puntero = puntero->next;
+                    cout<<"Hola"<<endl;
+            }
+            return cantidad;
         }
         else{
-            
+            return 0;
         }
     }
 };
