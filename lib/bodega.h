@@ -32,11 +32,11 @@ struct bodega {
                 columnas.push(nodop);
             }
             if (restar==0){
-                cout<<"Los productos se consiguieron en x tiempo"<<endl;
+                cout<<"Si se pudo realizar el pedido (Estado: completo)"<<endl;
             }
         }
         else{
-            cout<<"Imposible"<<endl;
+            cout<<"No se pudo realizar el pedido (Estado: incompleto)"<<endl;
         }
     }
 
