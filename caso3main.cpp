@@ -6,6 +6,7 @@
 #include "lib/listadoble.h"
 #include "lib/stack.h"
 #include "lib/paletas.h"
+#include "lib/queue.h"
 
 using namespace std;
 
@@ -44,14 +45,14 @@ int main() {
 
     cout<<"------------------------------ARROZ------------------------------------------------------"<<endl;
 
-    bodegaarroz.retirarProducto(70);
-    bodegaarroz.retirarProducto(15);
+    //bodegaarroz.retirarProducto(70);
+    //bodegaarroz.retirarProducto(15);
 
     //cout<<bodegaarroz.verCantProductos()<<" quedan productos en stock"<<endl;
 
-    cout<<"Repartidos en " << bodegaarroz.columnas.stackList.getSize()<<" columnas"<<endl;
+    //cout<<"Repartidos en " << bodegaarroz.columnas.stackList.getSize()<<" columnas"<<endl;
 
-    bodegaarroz.retirarProducto(100);
+    //bodegaarroz.retirarProducto(100);
 
     //-------------------------------------------FRIJOLES--------------------------------------------
     struct paleta frijoles1 = {40};
@@ -81,10 +82,29 @@ int main() {
     
     cout<<"------------------------------FRIJOLES------------------------------------------------------"<<endl;
 
-    bodegafrijoles.retirarProducto(75);
+    //bodegafrijoles.retirarProducto(75);
+
+    //cout<<bodegafrijoles.verCantProductos()<<" quedan productos en stock"<<endl;
+
+    //cout<<"Repartidos en " << bodegafrijoles.columnas.stackList.getSize()<<" columnas"<<endl;
+
+    
+    //-------------------------------------------PEDIDOS--------------------------------------------
+
+    int pedido[2]={70,75};
+    
+    struct bodega nombresbodega[2] = {bodegaarroz,bodegafrijoles};
+
+
+    struct montacarga montac1;
+    montac1.tiempo=1000;
+    montac1.cantidad1=70;
+    montac1.cantidad2=75;
+    montac1.nombre1=bodegaarroz;
+    montac1.nombre2=bodegafrijoles;
+
+    montac1.traerProductos();
 
     cout<<bodegafrijoles.verCantProductos()<<" quedan productos en stock"<<endl;
-
-    cout<<"Repartidos en " << bodegafrijoles.columnas.stackList.getSize()<<" columnas"<<endl;
 
 }

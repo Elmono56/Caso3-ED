@@ -13,10 +13,9 @@ struct bodega {
     struct stack columnas;
 
 
-    void retirarProducto(int restar){
+    int  retirarProducto(int restar){
         
         if (columnas.isEmpty()==0){
-
             nodo* nodop = (nodo*) columnas.pop();
             paleta* paleta1 = (paleta*) nodop->data;
             
@@ -25,7 +24,7 @@ struct bodega {
                 restar--;
             }
             if (restar>0){
-                retirarProducto(restar);
+                return 2+ retirarProducto(restar);
             }
             if (paleta1->cantproducto>0){
                 nodop->data=paleta1;
@@ -33,11 +32,14 @@ struct bodega {
             }
             if (restar==0){
                 cout<<"Si se pudo realizar el pedido (Estado: completo)"<<endl;
+                return 2;
             }
         }
         else{
             cout<<"No se pudo realizar el pedido (Estado: incompleto)"<<endl;
+            return 0;
         }
+        return 0;
     }
 
     int verCantProductos(){
