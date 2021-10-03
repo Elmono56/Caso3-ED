@@ -28,7 +28,8 @@ struct bodega {
                 retirarProducto(restar);
             }
             if (paleta1->cantproducto>0){
-                columnas.push(paleta1);
+                nodop->data=paleta1;
+                columnas.push(nodop);
             }
             if (restar==0){
                 cout<<"Los productos se consiguieron en x tiempo"<<endl;
@@ -41,13 +42,20 @@ struct bodega {
 
     int verCantProductos(){
         if (columnas.isEmpty()==0){
-            nodo* puntero = columnas.stackList.start;
+            int largo = columnas.stackList.getSize();
+            nodo* array[largo];
             int cantidad=0;
-            while (puntero!=nullptr){
-                    paleta* paleta1 = (paleta*) puntero->data;
-                    cantidad = cantidad + paleta1->cantproducto;
-                    puntero = puntero->next;
-                    cout<<"Hola"<<endl;
+            int cont = 0;
+            while (largo!=0){
+                nodo* puntero = (nodo*) columnas.pop();
+                paleta* paleta1 = (paleta*) puntero->data;
+                cantidad = cantidad + paleta1->cantproducto;
+                array[cont++]=puntero;
+                largo--;
+            }
+            while (cont!=0){
+                nodo* puntero = array[cont--];
+                columnas.push(puntero);
             }
             return cantidad;
         }
