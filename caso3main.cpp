@@ -136,8 +136,8 @@ int main() {
 
     struct montacarga montac2;
 
-    montac1.tiempo= 4000;
-    montac2.tiempo= 3500;
+    montac1.tiempo= 1000;
+    montac2.tiempo= 1000;
 
     montac1.colapedidos = colapedidos1;
 

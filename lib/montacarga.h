@@ -6,6 +6,7 @@
 #include "bodega.h"
 #include "pedidounico.h"
 #include "nodo.h"
+#include "queue.h"
 
 using namespace std;
 
@@ -15,15 +16,19 @@ struct montacarga {
 
 
     void traerProductos(){
-
         if (colapedidos.isEmpty()==0){
-            while (colapedidos.isEmpty()!=1){
-                struct nodo actual = (nodo) colapedidos.enqueue();
+            int cont = 1;
+            while (colapedidos.isEmpty()==0){
+                cout<<"Pedido #"<<cont++<<endl;
+                struct nodo* punternoactual = (nodo*) colapedidos.dequeue();
+                struct nodo actual = *punternoactual;
                 struct pedidounico* datospedido = (pedidounico*) actual.data;
                 int cantidad = datospedido->cantidad;
                 struct bodega nombreb = datospedido->nombrebodega;
 
-                nombreb.retirarProducto(cantidad);
+                int time = nombreb.retirarProducto(cantidad);
+
+                cout<<"Se realizo en :"<<(tiempo*time)/1000<<" segundos"<<endl;
             }
           
         }
