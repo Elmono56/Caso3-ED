@@ -12,13 +12,10 @@ struct bodega {
     
     struct stack columnas;
 
-
     int  retirarProducto(int restar){
-        
         if (columnas.isEmpty()==0){
             nodo* nodop = (nodo*) columnas.pop();
             paleta* paleta1 = (paleta*) nodop->data;
-            
             while (restar!=0 & paleta1->cantproducto!=0){
                 paleta1->cantproducto=paleta1->cantproducto-1;
                 restar--;

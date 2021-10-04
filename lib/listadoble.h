@@ -1,15 +1,13 @@
 #ifndef _LISTAGENERICA_
-#define _LISTAGENERICA_ 1
+#define _LISTAGENERICA_ 0
 
 #include "nodo.h"
 #include <stdlib.h>
-
 
 struct listadoble {
     struct nodo* start = nullptr;
     struct nodo* end = nullptr;
     int size =0;
-
 
     bool isEmpty() {
         return size == 0;
@@ -22,7 +20,6 @@ struct listadoble {
     void addToEnd(void* pData) {
         struct nodo* newNode = (struct nodo*)malloc(sizeof(struct nodo)); 
         newNode->data = pData;
-
         if (size==0) {
             start = newNode;
             end = newNode;
@@ -31,14 +28,12 @@ struct listadoble {
             end->next = newNode;
             end = newNode;
         }
-
         size++;
     }
 
     void addToBegining(void* pData) {
         struct nodo* newNode = (struct nodo*)malloc(sizeof(struct nodo)); 
         newNode->data = pData;
-
         if (size==0) {
             start = newNode;
             end = newNode;
@@ -47,14 +42,12 @@ struct listadoble {
             start->previous = newNode;
             start = newNode;
         }
-
         size++;
     }
 
     void* removeFirst() {
         void* result = nullptr;
         struct nodo* cursor = start;
-
         if (size>1) {
             start->next->previous = nullptr;
             start = start->next;
@@ -67,7 +60,6 @@ struct listadoble {
             result = cursor->data;
             size--;
         }
-
         return result;
     }   
 };

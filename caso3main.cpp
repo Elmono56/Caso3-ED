@@ -32,7 +32,6 @@ int main() {
     a5.data = &arroz5;
     struct nodo a6;
     a6.data = &arroz6;
-
     struct stack columnaarroz;
     columnaarroz.push(&a1);
     columnaarroz.push(&a2);
@@ -43,17 +42,6 @@ int main() {
 
     struct bodega bodegaarroz;
     bodegaarroz.columnas = columnaarroz;
-
-    cout<<"------------------------------ARROZ------------------------------------------------------"<<endl;
-
-    //bodegaarroz.retirarProducto(70);
-    //bodegaarroz.retirarProducto(15);
-
-    //cout<<bodegaarroz.verCantProductos()<<" quedan productos en stock"<<endl;
-
-    //cout<<"Repartidos en " << bodegaarroz.columnas.stackList.getSize()<<" columnas"<<endl;
-
-    //bodegaarroz.retirarProducto(100);
 
     //-------------------------------------------FRIJOLES--------------------------------------------
     struct paleta frijoles1 = {40};
@@ -81,96 +69,44 @@ int main() {
     struct bodega bodegafrijoles;
     bodegafrijoles.columnas = columnafrijoles;
     
-    cout<<"------------------------------FRIJOLES------------------------------------------------------"<<endl;
-
-    //bodegafrijoles.retirarProducto(75);
-
-    //cout<<bodegafrijoles.verCantProductos()<<" quedan productos en stock"<<endl;
-
-    //cout<<"Repartidos en " << bodegafrijoles.columnas.stackList.getSize()<<" columnas"<<endl;
-
-    
     //-------------------------------------------PEDIDOS--------------------------------------------
 
     struct pedidounico pedido1;
     pedido1.cantidad = 75;
     pedido1.nombrebodega = bodegaarroz;
-
     struct pedidounico pedido2;
     pedido2.cantidad = 70;
     pedido2.nombrebodega = bodegafrijoles;
-
     struct pedidounico pedido3;
     pedido2.cantidad = 45;
     pedido2.nombrebodega = bodegaarroz;
-
     struct pedidounico pedido4;
     pedido2.cantidad = 30;
     pedido2.nombrebodega = bodegafrijoles;
 
-
     struct nodo nodop1;
     nodop1.data = &pedido1;
-
     struct nodo nodop2;
     nodop2.data = &pedido2;
-
     struct nodo nodop3;
     nodop3.data= &pedido3;
-
     struct nodo nodop4;
     nodop4.data = &pedido4;
 
     struct queue colapedidos1;
-    
     colapedidos1.enqueue(&nodop1);
     colapedidos1.enqueue(&nodop2);
-
     struct queue colapedidos2;
-
     colapedidos2.enqueue(&nodop3);
     colapedidos2.enqueue(&nodop4);
 
-
     struct montacarga montac1;
-
     struct montacarga montac2;
-
     montac1.tiempo= 1000;
     montac2.tiempo= 1000;
-
     montac1.colapedidos = colapedidos1;
-
     montac2.colapedidos = colapedidos2;
-
     montac1.traerProductos();
-    
     montac2.traerProductos();
 
-
-
-
-
-
-
-
-
-
-    /*
-    int pedido[2]={70,75};
-    
-    struct bodega nombresbodega[2] = {bodegaarroz,bodegafrijoles};
-
-
-    struct montacarga montac1;
-    montac1.tiempo=1000;
-    montac1.cantidad1=70;
-    montac1.cantidad2=75;
-    montac1.nombre1=bodegaarroz;
-    montac1.nombre2=bodegafrijoles;
-
-    montac1.traerProductos();
-
-    cout<<bodegafrijoles.verCantProductos()<<" quedan productos en stock"<<endl;
-    */
 }

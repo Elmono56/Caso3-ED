@@ -1,7 +1,6 @@
 #ifndef _PEDIDOU_
 #define _PEDIDOU_ 0
 
-#include <iostream>
 #include "bodega.h"
 
 struct pedidounico{
