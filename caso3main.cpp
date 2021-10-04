@@ -1,6 +1,5 @@
 #include <iostream>
 #include "lib/bodega.h"
-#include "lib/pedidos.h"
 #include "lib/montacarga.h"
 #include "lib/nodo.h"
 #include "lib/listadoble.h"
@@ -70,43 +69,39 @@ int main() {
     bodegafrijoles.columnas = columnafrijoles;
     
     //-------------------------------------------PEDIDOS--------------------------------------------
+    int time1 = bodegaarroz.retirarProducto(30);
+    int time2 = bodegafrijoles.retirarProducto(60);
+    int time3 = bodegaarroz.retirarProducto(15);
+    int time4 = bodegafrijoles.retirarProducto(10);
+    cout<<endl;
+    cout<<bodegaarroz.verCantProductos()<<" Productos restantes"<<endl;
+    cout<<bodegafrijoles.verCantProductos()<<" Productos restantes"<<endl;
+    cout<<endl;
 
     struct pedidounico pedido1;
-    pedido1.cantidad = 75;
+    pedido1.cantidad = 50;
     pedido1.nombrebodega = bodegaarroz;
     struct pedidounico pedido2;
-    pedido2.cantidad = 70;
-    pedido2.nombrebodega = bodegafrijoles;
-    struct pedidounico pedido3;
-    pedido2.cantidad = 45;
-    pedido2.nombrebodega = bodegaarroz;
-    struct pedidounico pedido4;
-    pedido2.cantidad = 30;
+    pedido2.cantidad = 40;
     pedido2.nombrebodega = bodegafrijoles;
 
     struct nodo nodop1;
     nodop1.data = &pedido1;
     struct nodo nodop2;
     nodop2.data = &pedido2;
-    struct nodo nodop3;
-    nodop3.data= &pedido3;
-    struct nodo nodop4;
-    nodop4.data = &pedido4;
 
     struct queue colapedidos1;
     colapedidos1.enqueue(&nodop1);
     colapedidos1.enqueue(&nodop2);
+
     struct queue colapedidos2;
-    colapedidos2.enqueue(&nodop3);
-    colapedidos2.enqueue(&nodop4);
 
     struct montacarga montac1;
     struct montacarga montac2;
     montac1.tiempo= 1000;
-    montac2.tiempo= 1000;
+    montac2.tiempo= 2000;
     montac1.colapedidos = colapedidos1;
-    montac2.colapedidos = colapedidos2;
     montac1.traerProductos();
     montac2.traerProductos();
-
+    
 }

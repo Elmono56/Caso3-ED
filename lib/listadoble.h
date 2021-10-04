@@ -7,7 +7,7 @@
 struct listadoble {
     struct nodo* start = nullptr;
     struct nodo* end = nullptr;
-    int size =0;
+    int size = 0;
 
     bool isEmpty() {
         return size == 0;

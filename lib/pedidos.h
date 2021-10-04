@@ -5,8 +5,10 @@
 
 using namespace std;
 
+//NO IMPLEMENTADO
+
 struct pedidos {
-    int cantidad[10];
+    //int cantidad[10];
     //bodega pedidos[];
 };
 
